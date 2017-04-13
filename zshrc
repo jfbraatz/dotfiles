@@ -14,8 +14,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 stty -ixon
 
-tmux attach &> /dev/null
+#tmux attach &> /dev/null
 
 if [[ ! $TERM =~ screen ]]; then
-    exec tmux
+#    exec tmux
 fi

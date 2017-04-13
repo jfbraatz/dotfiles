@@ -8,7 +8,7 @@
 
 dir=~/.dotfiles                    # dotfiles directory
 olddir=~/.dotfiles_old             # old dotfiles backup directory
-files="shell_prompt.sh vimrc vim zshrc gitconfig tmux.conf tmuxsnapshot"    # list of files/folders to symlink in homedir
+files="shell_prompt.sh vimrc vim zshrc gitconfig tmux.conf tmuxsnapshot Xresources"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -29,3 +29,17 @@ for file in $files; do
 	echo "Creating symlink to $file in home directory."
 	ln -s $dir/$file ~/.$file
 done
+
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+git clone https://github.com/powerline/fonts.git
+cd ~/fonts
+bash install.sh
+cd ..
+rm -rf fonts
+
+# install plugins in vim
+# do the stuff to install yaourt
+
+
+# xrdb ~/.Xresources
