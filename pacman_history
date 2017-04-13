@@ -1,0 +1,30 @@
+    5  pacman -S grub
+    8  pacman -S intel-ucode
+   15  pacman -S zsh
+   24  pacman -S dialog
+   54  pacman -S wpa_supplicant
+   94  pacman -S iw
+   95  pacman -S zsh
+   99  pacman -S sudo
+  100  pacman -S also-utils
+  101  pacman -S alsa-utils
+  108  pacman -S xorg-server xorg-xinit xorg-server-utils
+  110  pacman -S xterm
+  115  sudo pacman -S firefox
+  165  pacman -S git
+  171  pacman -S tmux
+  194  pacman -S chrome
+  196  pacman -S yaourt
+  197  vim /etc/pacman.conf
+  198  pacman -Sy
+  199  pacman -S yaourt
+  201  pacman -S chromium
+  209  pacman -S openssh
+  213  pacman -S urxvt
+  214  pacman -S urxvt-unicode
+  215  pacman -S rxvt-unicode
+  218  pacman -S adduser
+  222  pacman -S xorg-xrdb
+  224  history | grep pacman
+  226  ls > pacman_history
+  227  history | grep pacman > pacman_history
