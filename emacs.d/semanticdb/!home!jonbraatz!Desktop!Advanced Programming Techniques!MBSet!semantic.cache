@@ -1,0 +1,250 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [87 106])
+            ("string.h" include (:system-flag t) nil [107 126])
+            ("stdio.h" include (:system-flag t) nil [127 145])
+            ("math.h" include (:system-flag t) nil [146 163])
+            ("stdlib.h" include (:system-flag t) nil [164 183])
+            ("time.h" include (:system-flag t) nil [184 201])
+            ("pthread.h" include (:system-flag t) nil [202 222])
+            ("GL/glut.h" include (:system-flag t) nil [224 244])
+            ("GL/glext.h" include (:system-flag t) nil [245 266])
+            ("GL/gl.h" include (:system-flag t) nil [267 285])
+            ("GL/glu.h" include (:system-flag t) nil [286 305])
+            ("complex.h" include nil nil [306 326])
+            ("std" using (:type ("std" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [328 348])
+            ("w" variable
+               (:default-value "512"
+                :type "int")
+                nil [350 362])
+            ("h" variable
+               (:default-value "512"
+                :type "int")
+                nil [363 375])
+            ("minC" function
+               (:prototype-flag t
+                :type ("Complex" type (:type "class") nil nil))
+                nil [413 439])
+            ("maxC" function
+               (:prototype-flag t
+                :type ("Complex" type (:type "class") nil nil))
+                nil [440 464])
+            ("minX" variable
+               (:default-value "2.0"
+                :type ("GLfloat" type (:type "class") nil nil))
+                nil [465 484])
+            ("minY" variable
+               (:default-value "-1.2"
+                :type ("GLfloat" type (:type "class") nil nil))
+                nil [485 505])
+            ("maxX" variable
+               (:default-value "1.0"
+                :type ("GLfloat" type (:type "class") nil nil))
+                nil [506 525])
+            ("maxY" variable
+               (:default-value "1.8"
+                :type ("GLfloat" type (:type "class") nil nil))
+                nil [526 545])
+            ("maxIt" variable
+               (:default-value "2000"
+                :type "int")
+                nil [546 568])
+            ("black" variable
+               (:default-value "{0, 0, 0}"
+                :type "int")
+                nil [627 645])
+            ("paletteSize" variable
+               (:constant-flag t
+                :default-value "128"
+                :type "int")
+                nil [646 674])
+            ("palette" variable
+               (:dereference 2
+                :type ("GLfloat" type (:type "class") nil nil))
+                nil [675 707])
+            ("calculateColor" function
+               (:pointer 1
+                :arguments 
+                  ( ("x" variable (:type ("GLfloat" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [733 743])
+                    ("y" variable (:type ("GLfloat" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [744 754]))                  
+                :type ("GLfloat" type (:type "class") nil nil))
+                nil [709 944])
+            ("display" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [959 964]))                  
+                :type "void")
+                nil [946 1295])
+            ("createPalette" function (:type "void") nil [1297 1960])
+            ("init" function (:type "void") nil [1961 2501])
+            ("reshape" function
+               (:arguments 
+                  ( ("w" variable (:type "int") (reparse-symbol arg-sub-list) [2516 2522])
+                    ("h" variable (:type "int") (reparse-symbol arg-sub-list) [2523 2529]))                  
+                :type "void")
+                nil [2503 2718])
+            ("mouse" function
+               (:arguments 
+                  ( ("button" variable (:type "int") (reparse-symbol arg-sub-list) [2731 2742])
+                    ("state" variable (:type "int") (reparse-symbol arg-sub-list) [2743 2753])
+                    ("x" variable (:type "int") (reparse-symbol arg-sub-list) [2754 2760])
+                    ("y" variable (:type "int") (reparse-symbol arg-sub-list) [2761 2767]))                  
+                :type "void")
+                nil [2720 2956])
+            ("motion" function
+               (:arguments 
+                  ( ("x" variable (:type "int") (reparse-symbol arg-sub-list) [2970 2976])
+                    ("y" variable (:type "int") (reparse-symbol arg-sub-list) [2977 2983]))                  
+                :type "void")
+                nil [2958 3047])
+            ("keyboard" function
+               (:arguments 
+                  ( ("c" variable (:type "unsigned char") (reparse-symbol arg-sub-list) [3063 3079])
+                    ("x" variable (:type "int") (reparse-symbol arg-sub-list) [3080 3086])
+                    ("y" variable (:type "int") (reparse-symbol arg-sub-list) [3087 3093]))                  
+                :type "void")
+                nil [3049 3130])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [3141 3150])
+                    ("argv" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3151 3163]))                  
+                :type "int")
+                nil [3132 3310]))          
+      :file "MBSet.cpp"
+      :pointmax 3312
+      :fsize 3352
+      :lastmodtime '(22792 64798 383310 419000)
+      :unmatched-syntax '((semantic-list 624 . 626) (symbol 617 . 624) (number 459 . 462) (number 454 . 457) (number 434 . 437) (punctuation 433 . 434) (number 428 . 431) (punctuation 427 . 428) (semantic-list 624 . 626) (symbol 617 . 624) (number 844 . 845) (number 841 . 842) (number 844 . 845) (number 841 . 842)))
+
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("Complex" type
+               (:members 
+                  ( ("public" label nil (reparse-symbol classsubparts) [70 77])
+                    ("Complex" function
+                       (:prototype-flag t
+                        :constructor-flag t
+                        :type ("Complex" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [98 108])
+                    ("Complex" function
+                       (:prototype-flag t
+                        :constructor-flag t
+                        :arguments 
+                          ( ("" variable (:type "bool") (reparse-symbol arg-sub-list) [119 124]))                          
+                        :type ("Complex" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [111 125])
+                    ("Complex" function
+                       (:prototype-flag t
+                        :constructor-flag t
+                        :arguments 
+                          ( ("r" variable (:type "double") (reparse-symbol arg-sub-list) [157 166])
+                            ("i" variable (:type "double") (reparse-symbol arg-sub-list) [167 176]))                          
+                        :type ("Complex" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [149 177])
+                    ("Complex" function
+                       (:prototype-flag t
+                        :constructor-flag t
+                        :arguments 
+                          ( ("r" variable (:type "double") (reparse-symbol arg-sub-list) [216 225]))                          
+                        :type ("Complex" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [208 226])
+                    ("+" function
+                       (:prototype-flag t
+                        :methodconst-flag t
+                        :operator-flag t
+                        :arguments 
+                          ( ("b" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("Complex" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [313 330]))                          
+                        :type ("Complex" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [294 337])
+                    ("-" function
+                       (:prototype-flag t
+                        :methodconst-flag t
+                        :operator-flag t
+                        :arguments 
+                          ( ("b" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("Complex" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [359 376]))                          
+                        :type ("Complex" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [340 383])
+                    ("" function
+                       (:prototype-flag t
+                        :methodconst-flag t
+                        :operator-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("b" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("Complex" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [405 422]))                          
+                        :type ("Complex" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [386 429])
+                    ("/" function
+                       (:prototype-flag t
+                        :methodconst-flag t
+                        :operator-flag t
+                        :arguments 
+                          ( ("b" variable
+                               (:reference 1
+                                :constant-flag t
+                                :type ("Complex" type (:type "class") nil nil))
+                                (reparse-symbol arg-sub-list) [451 468]))                          
+                        :type ("Complex" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [432 475])
+                    ("Mag" function
+                       (:prototype-flag t
+                        :methodconst-flag t
+                        :type ("Complex" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [509 531])
+                    ("Mag2" function
+                       (:prototype-flag t
+                        :methodconst-flag t
+                        :type "double")
+                        (reparse-symbol classsubparts) [580 602])
+                    ("Angle" function
+                       (:prototype-flag t
+                        :methodconst-flag t
+                        :type ("Complex" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [643 665])
+                    ("Conj" function
+                       (:prototype-flag t
+                        :methodconst-flag t
+                        :type ("Complex" type (:type "class") nil nil))
+                        (reparse-symbol classsubparts) [710 732])
+                    ("Print" function
+                       (:prototype-flag t
+                        :methodconst-flag t
+                        :type "void")
+                        (reparse-symbol classsubparts) [789 811])
+                    ("public" label nil (reparse-symbol classsubparts) [857 864])
+                    ("real" variable (:type "double") (reparse-symbol classsubparts) [867 879])
+                    ("imag" variable (:type "double") (reparse-symbol classsubparts) [882 894])
+                    ("NaN" variable (:type "bool") (reparse-symbol classsubparts) [897 908]))                  
+                :type "class")
+                nil [54 1109]))          
+      :file "complex.h"
+      :pointmax 1118
+      :fsize 1156
+      :lastmodtime '(22785 21737 69995 796000)
+      :unmatched-syntax nil))
+  :file "!home!jonbraatz!Desktop!Advanced Programming Techniques!MBSet!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -38,8 +38,15 @@ bash install.sh
 cd ..
 rm -rf fonts
 
+git clone https://github.com/seebi/dircolors-solarized
+
 # install plugins in vim
 # do the stuff to install yaourt
 
 
 # xrdb ~/.Xresources
+# fix sound maybe (mute beep)
+# yaourt -S sauce-code-pro-nerd-font
+# lxappearance can change system fonts easily (it's in .config/gtk-3.0/settings.ini
+# insall Arc Darker gtk theme from yaourt
+# sudo pip install cpplint
