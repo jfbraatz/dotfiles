@@ -1,4 +1,4 @@
-export PATH=$PATH:/usr/local/bin
+#export PATH=/proj/arcesium/haskell/setup/current/bin:$PATH:/usr/local/bin
 
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.shell_prompt.sh
@@ -14,6 +14,8 @@ setopt SHARE_HISTORY
 
 bindkey -v
 bindkey -M viins 'jk' vi-cmd-mode
+bindkey '^R' history-incremental-search-backward
+
 eval `dircolors ~/dircolors-solarized/dircolors.ansi-dark`
 alias ls='ls --color=auto'
 alias ..='cd ..'
