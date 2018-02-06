@@ -3,6 +3,14 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(TeX-view-program-list (quote (("Zathura" "zathura %o"))))
+ '(TeX-view-program-selection
+   (quote
+    (((output-dvi style-pstricks)
+      "dvips and gv")
+     (output-dvi "xdvi")
+     (output-pdf "Zathura")
+     (output-html "xdg-open"))))
  '(custom-safe-themes
    (quote
     ("73a13a70fd111a6cd47f3d4be2260b1e4b717dbf635a9caee6442c949fad41cd" "1b27e3b3fce73b72725f3f7f040fd03081b576b1ce8bbdfcb0212920aec190ad" "721bb3cb432bb6be7c58be27d583814e9c56806c06b4077797074b009f322509" "c79c2eadd3721e92e42d2fefc756eef8c7d248f9edefd57c4887fbf68f0a17af" "158013ec40a6e2844dbda340dbabda6e179a53e0aea04a4d383d69c329fba6e6" "da538070dddb68d64ef6743271a26efd47fbc17b52cc6526d932b9793f92b718" "9b1c580339183a8661a84f5864a6c363260c80136bd20ac9f00d7e1d662e936a" "cf284fac2a56d242ace50b6d2c438fcc6b4090137f1631e32bedf19495124600" "66aea5b7326cf4117d63c6694822deeca10a03b98135aaaddb40af99430ea237" "de0b7245463d92cba3362ec9fe0142f54d2bf929f971a8cdf33c0bf995250bcf" "251348dcb797a6ea63bbfe3be4951728e085ac08eee83def071e4d2e3211acc3" "01e067188b0b53325fc0a1c6e06643d7e52bc16b6653de2926a480861ad5aa78" "256a381a0471ad344e1ed33470e4c28b35fb4489a67eb821181e35f080083c36" "b563a87aa29096e0b2e38889f7a5e3babde9982262181b65de9ce8b78e9324d5" "e30f381d0e460e5b643118bcd10995e1ba3161a3d45411ef8dfe34879c9ae333" "003a9aa9e4acb50001a006cfde61a6c3012d373c4763b48ceb9d523ceba66829" "af717ca36fe8b44909c984669ee0de8dd8c43df656be67a50a1cf89ee41bde9a" "d21135150e22e58f8c656ec04530872831baebf5a1c3688030d119c114233c24" "c616e584f7268aa3b63d08045a912b50863a34e7ea83e35fcab8537b75741956" "228c0559991fb3af427a6fa4f3a3ad51f905e20f481c697c6ca978c5683ebf43" "d6db7498e2615025c419364764d5e9b09438dfe25b044b44e1f336501acd4f5b" "3eb93cd9a0da0f3e86b5d932ac0e3b5f0f50de7a0b805d4eb1f67782e9eb67a4" "6db9acac88c82f69296751e6c6d808736d6ff251dcb34a1381be86efc14fef54" "946e871c780b159c4bb9f580537e5d2f7dba1411143194447604ecbaf01bd90c" "2b8dff32b9018d88e24044eb60d8f3829bd6bbeab754e70799b78593af1c3aba" "b181ea0cc32303da7f9227361bb051bbb6c3105bb4f386ca22a06db319b08882" "b59d7adea7873d58160d368d42828e7ac670340f11f36f67fa8071dbf957236a" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
@@ -11,7 +19,7 @@
  '(haskell-process-log nil)
  '(package-selected-packages
    (quote
-    (git-gutter-fringe+ git-gutter-fringe git-gutter haskell-mode geiser paredit flymake-cursor flymake-google-cpplint iedit auto-complete-c-headers auto-complete key-chord airline-themes helm zygospore projectile company use-package solarized-theme relative-line-numbers evil-visual-mark-mode))))
+    (flycheck xpm autocomplete auctex magit git-gutter-fringe+ git-gutter-fringe git-gutter haskell-mode geiser paredit flymake-cursor flymake-google-cpplint iedit auto-complete-c-headers auto-complete key-chord airline-themes helm zygospore projectile company use-package solarized-theme relative-line-numbers evil-visual-mark-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -29,12 +37,34 @@
 (setq package-enable-at-startup nil)
 (package-initialize)
 
-(require 'evil)
-(evil-mode t)
-
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(eval-when-compile
+  (require 'use-package))
+
+(use-package evil
+  :ensure t
+  :init (evil-mode t))
+;; (require 'evil)
+;; (evil-mode t)
+
+(use-package key-chord
+  :ensure t
+  :init (progn
+	  (key-chord-mode 1)
+	  (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+	  (key-chord-define evil-visual-state-map "jk" 'evil-normal-state)
+	  (key-chord-define evil-replace-state-map "jk" 'evil-normal-state)))
+;; (require 'key-chord)
+;; (key-chord-mode 1)
+;; (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+;; (key-chord-define evil-visual-state-map "jk" 'evil-normal-state)
+;; (key-chord-define evil-replace-state-map "jk" 'evil-normal-state)
 
 (defun relative-abs-line-numbers-format (offset)
   "The default formatting function.
@@ -47,13 +77,21 @@ Return the absolute value of OFFSET, converted to string."
 
 (load-theme 'solarized-dark)
 
-(require 'powerline)
-(powerline-default-theme)
+(use-package powerline
+  :ensure t
+  :init (powerline-default-theme))
+;; (require 'powerline)
+;; (powerline-default-theme)
 
-(require 'auto-complete)
-;; do defafult config for auto-complete
-(require 'auto-complete-config)
-(ac-config-default)
+(use-package autocomplete
+  :ensure t
+  :init (progn
+	  (require 'auto-complete-config)
+	  (ac-config-default)))
+;; (require 'auto-complete)
+;; ;; do defafult config for auto-complete
+;; (require 'auto-complete-config)
+;; (ac-config-default)
 
 ;;define a function which initializes auto-complete-c-headers and gets called for c/c++ hooks
 (defun my:ac-c-header-init()
@@ -97,6 +135,12 @@ Return the absolute value of OFFSET, converted to string."
 (add-hook 'c-mode-hook 'my:flymake-google-init)
 (add-hook 'c++-mode-hook 'my:flymake-google-init)
 
+(use-package flycheck
+  :ensure t
+  :config (setq flycheck-global-modes
+		'(c-mode c++-mode))
+  :init (global-flycheck-mode))
+
 ;; turn on Semantic
 ;;(semantic-mode 1)
 ;; define a function which adds semantic as a suggestion
@@ -107,18 +151,16 @@ Return the absolute value of OFFSET, converted to string."
 
 ;;(global-semantic-idle-scheduler-mode -1)
 
-(require 'airline-themes)
-(load-theme 'airline-wombat)
+(use-package airline-themes
+  :ensure t
+  :config (load-theme 'airline-wombat))
+;; (require 'airline-themes)
+;; (load-theme 'airline-wombat)
 
-(setq-default c-deault-style "linux"
+(setq-default c-default-style "linux"
 	      c-basic-offset 4)
 (set-window-fringes nil 0 0)
 
-(require 'key-chord)
-(key-chord-mode 1)
-(key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
-(key-chord-define evil-visual-state-map "jk" 'evil-normal-state)
-(key-chord-define evil-replace-state-map "jk" 'evil-normal-state)
 
 (require 'paredit)
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
@@ -147,3 +189,24 @@ Return the absolute value of OFFSET, converted to string."
     (lambda () (interactive) (find-alternate-file "..")))
   ; was dired-up-directory
  ))
+
+(blink-cursor-mode 0)
+
+(require 'tex)
+
+(TeX-global-PDF-mode t)
+
+;; Never include scroll bars on any frames
+(defun my/disable-scroll-bars (frame)
+  (modify-frame-parameters frame
+                           '((vertical-scroll-bars . nil)
+                             (horizontal-scroll-bars . nil))))
+(add-hook 'after-make-frame-functions 'my/disable-scroll-bars)
+
+;; Helm
+(use-package helm
+  :ensure t
+  :init (progn (require 'helm-config)
+	       (helm-mode 1)))
+;; (require 'helm-config)
+;; (helm-mode 1)

@@ -45,7 +45,7 @@ filetype plugin indent on
 set backspace=indent,eol,start
 set diffopt+=iwhite     "ignore whitespace during diffs 
 set gdefault
-set expandtab
+set expandtab!
 set tabstop=4
 set shiftwidth=4
 set ruler
