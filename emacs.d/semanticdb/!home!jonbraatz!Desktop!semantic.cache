@@ -1,0 +1,16 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode scheme-mode
+      :tags nil
+      :file "test.scm"
+      :pointmax 8954
+      :fsize 8982
+      :lastmodtime '(22811 33084 153389 894000)
+      :unmatched-syntax nil))
+  :file "!home!jonbraatz!Desktop!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
